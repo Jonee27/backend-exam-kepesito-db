@@ -2,14 +2,13 @@ package hu.nive.ujratervezes.jurassic;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class JurassicPark {
 
-    private String dbUrl;
-    private String dbUser;
-    private String dbPassword;
+    private final String dbUrl;
+    private final String dbUser;
+    private final String dbPassword;
 
     public JurassicPark(String dbUrl, String dbUser, String dbPassword) {
         this.dbUrl = dbUrl;
@@ -30,7 +29,6 @@ public class JurassicPark {
             while (resultSet.next()) {
                 dinosaurs.add(resultSet.getString(1));
             }
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
